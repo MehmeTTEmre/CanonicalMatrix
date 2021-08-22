@@ -8,7 +8,7 @@ int main()
 {
     srand(time(NULL));
     int n,k;
-    cout<<"değerleri girin:"<<endl;
+    cout<<"enter values:"<<endl;
     //We enter 2 values, n is the size of the square matrix, and k is how many times to compare.
     cin>>n>>k;
     int random[n][n];
@@ -19,7 +19,7 @@ int main()
         }
         cout<<endl;
     }
-    cout<<endl<<"çıktı"<<endl;
+    cout<<endl<<"output"<<endl;
     for(int x = 1; x <= k; x++){
       
       for(int i = 0; i < n; i++){
