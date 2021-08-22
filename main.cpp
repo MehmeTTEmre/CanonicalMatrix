@@ -9,7 +9,7 @@ int main()
     srand(time(NULL));
     int n,k;
     cout<<"değerleri girin:"<<endl;
-    //2 değer gireriz n değeri kare matrisinin büyüklüğü, k değeri ise kaç kere kıyaslama yapılacağıdır.
+    //We enter 2 values, n is the size of the square matrix, and k is how many times to compare.
     cin>>n>>k;
     int random[n][n];
     for(int i = 0; i < n; i++){
@@ -24,7 +24,7 @@ int main()
       
       for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-          //matrisin ilk satırındaki elemanları kontrol eden koşuldur
+          //condition that checks the elements in the first row of the matrix
           if(i == 0){
             if(random[i][j] == random[i][j+1]){
               if(random[i][j]==0)
@@ -32,21 +32,21 @@ int main()
               else
                 random[i][j]=0;
             }
-            //ilk satırdaki değerleri üstündeki değerler ile yani matrisin en alt satırındaki değerler ile kıyaslar
+            //Compares the values in the first row with the values above it, that is, with the values in the bottom row of the matrix.
             else if(j+1 != n && random[i][j] == random[n-1][j+1]){
               if(random[i][j]==0)
                 random[i][j]=1;
               else
                 random[i][j]=0;
             }
-            //matrisin ilk satırındaki ve en sağ tarafındaki değeri kıyaslamak için yazılan koşuldur 
+            //Condition written to compare the value in the first row and the rightmost side of the matrix.
             else if(j+1 == n && random[i][j] == random[n-1][0]){
               if(random[i][j]==0)
                 random[i][j]=1;
               else
                 random[i][j]=0;
             }
-            //ilk satırın sonundaki elemanı bi alt satırın başındaki eleman ile kıyaslar
+            //Compares the element at the end of the first line with the element at the beginning of a sub-line
             else if(j+1 == n){
               if(random[i][j] == random[i+1][0]){
                 if(random[i][j]==0)
@@ -56,7 +56,7 @@ int main()
               }
             }
           }
-          //matrisin ilk satırı dışındaki satırları kontrol eder
+          //checks rows other than the first row of the matrix
           if(i != 0){ 
             if(j+1 != n && (random[i][j] == random[i][j+1] || random[i][j] == random[i-1][j])){
               if(random[i][j]==0)
@@ -64,7 +64,7 @@ int main()
               else
                 random[i][j]=0;
             }
-            //matrisin ilk ve son satırları dışındaki ve en sağ taraftaki elemanların kontrolünü yapar
+            //It checks the elements outside the first and last rows of the matrix and the rightmost elements.
             else if(j+1 == n && i+1 != n){
               if(random[i][j] == random[i+1][0] || random[i][j] == random[i-1][j]){
                 if(random[i][j]==0)
@@ -73,7 +73,7 @@ int main()
                 random[i][j]=0;
               }
             }
-            //matrisin en alt sağ elemanının kontrolünü yapar
+            //checks the lowest right element of the matrix
             else if(i+1 == n && j+1 == n){
               if(random[i][j] == random[0][0] || random[i][j] == random[i-1][j]){
                 if(random[i][j]==0)
@@ -85,7 +85,6 @@ int main()
           }
       }
     }
-    
     
     }
     for(int i = 0; i < n; i++){
